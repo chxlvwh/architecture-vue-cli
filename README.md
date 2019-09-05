@@ -4,9 +4,9 @@
 
 - 下载代码之后装包
 
-```javascript
-cnpm i
-```
+  ```javascript
+  cnpm i
+  ```
 
 - 左侧菜单栏修改
 
