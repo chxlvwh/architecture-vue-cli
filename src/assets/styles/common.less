@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 953307 */
+  src: url('//at.alicdn.com/t/font_953307_32bfkc0w81b.eot');
+  src: url('//at.alicdn.com/t/font_953307_32bfkc0w81b.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_953307_32bfkc0w81b.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_953307_32bfkc0w81b.woff') format('woff'),
+  url('//at.alicdn.com/t/font_953307_32bfkc0w81b.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_953307_32bfkc0w81b.svg#iconfont') format('svg');
+}
+
+//icon 样式
+.icon{
+  font-family: 'iconfont';
+  font-weight: lighter;
+  font-style: normal;
+}
+.icon-filter{
+  content:'\e61d'
+}
+.icon-exchange:before{
+  content: '\e679';
+}
+
+.icon-download:before{
+  content: '\e618';
+}
+
+.flex{
+  display: -webkit-box;
+  display: -moz-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.ivu-notice {
+  z-index: 9 !important;
+}
+
+//头部，菜单样式
+.ivu-layout{
+  height: 100%;
+}
+.ivu-layout-header {
+  background: #fff;
+  height: 55px;
+  line-height: 55px;
+}
+
+.layout-header-bar{
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  height: 55px;
+  line-height: 55px;
+}
+.layout-logo-left{
+  width: 90%;
+  height: 30px;
+  background: #5b6270;
+  border-radius: 3px;
+  margin: 15px auto;
+}
+.menu-icon{
+  transition: all .3s;
+  cursor: pointer;
+}
+.rotate-icon{
+  transform: rotate(-90deg);
+}
+.menu-item span{
+  display: inline-block;
+  overflow: hidden;
+  width: 90px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+  transition: width .2s ease .2s;
+}
+.menu-item i{
+  transform: translateX(0px);
+  transition: font-size .2s ease, transform .2s ease;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.ivu-menu{
+  .ivu-menu-opened {
+      background: transparent !important;
+      .ivu-menu-submenu-title {
+          background-color: transparent !important;
+      }
+      .ivu-menu-item {
+        padding-left: 55px !important;
+      }
+  }
+  .ivu-menu-submenu-title,.ivu-menu-item{
+      box-sizing: border-box;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 0 0 23px;
+      &:hover{
+        background: #1d233e !important;
+      }
+  }
+  li.ivu-menu-item.ivu-menu-item-active.ivu-menu-item-selected{
+      &:hover{
+        background: #1d233e !important;
+        color: #2d8cf0 !important;
+        border-right: 3px #2d8cf0 solid  !important;
+      }
+      background: #1d233e !important;
+      color: #2d8cf0 !important;
+      border-right: 3px #2d8cf0 solid  !important;
+  }
+  &.collapsed-menu {
+    .ivu-menu{
+      display: none;
+    }
+    span{
+      width: 0px;
+      transition: width .2s ease;
+    }
+    i{
+      transform: translateX(-4px);
+      transition: font-size .2s ease .2s, transform .2s ease .2s;
+      vertical-align: middle;
+      font-size: 22px;
+      &.ivu-menu-submenu-title-icon {
+        display: none;
+      }
+    }
+    .ivu-menu-item-active{
+      background: transparent !important;
+      .ivu-menu-submenu-title {
+        color: #2d8cf0 !important;
+        background: #1d233e !important;
+      }
+    }
+  }
+}
+
+//字号设置
+.ynt-title-h3 {
+  font-size: 16px;
+}
+.hide {display: none;}
+.block { display: block;}
+//间距设置
+.pt15 {padding-top: 15px;}
+.pt30 { padding-top: 30px;}
+.pb10 { padding-bottom: 10px;}
+.pb20 { padding-bottom: 20px;}
+.pb30 { padding-bottom: 30px;}
+.pb15 {padding-bottom: 15px;}
+
+.pl5 { padding-left: 5px;}
+.pl10 { padding-left: 10px;}
+
+.mt10 { margin-top: 10px;}
+.mt20 { margin-top: 20px;}
+.mt30 { margin-top: 30px;}
+.mt40 { margin-top: 40px;}
+.mt90 { margin-top: 90px;}
+
+.ml5 {margin-left: 5px;}
+.ml10 {margin-left: 10px;}
+.ml15 {margin-left: 15px;}
+.ml20 {margin-left: 20px;}
+.ml30 {margin-left: 30px;}
+
+.mr5 {margin-right: 5px;}
+.mr10 {margin-right: 10px;}
+.mr15 {margin-right: 15px;}
+.mr20 {margin-right: 20px;}
+.mr30 {margin-right: 30px;}
+.mr50 {margin-right: 50px;}
+
+.mb5 { margin-bottom: 5px;}
+.mb10 { margin-bottom: 10px;}
+.mb15 { margin-bottom: 15px;}
+.mb20 { margin-bottom: 20px;}
+.mb25 { margin-bottom: 25px;}
+.mb30 { margin-bottom: 30px;}
+.mb60 { margin-bottom: 60px;}
+
+//鼠标设置
+.cursor { cursor: pointer;}
+
+//浮动设置
+.fl { float: left;}
+.fr { float: right;}
+.ofh {overflow: hidden;}
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0
+}
+//超过额外的长度时候显示...
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//面包屑设置
+.ivu-breadcrumb{
+  display: inline-block;
+  span{
+    font-size: 14px;
+    color: #474443;
+    font-weight: 500;
+  }
+}
+//滚动条设置 细滚条
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background-color: #cdc4ef;
+
+	&-track-piece {
+		width: 6px;
+		background-color: #f8f8f8;
+	}
+
+	&-thumb {
+		width: 6px;
+		border-radius: 3px;
+		background-color: #ccc;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #999;
+		}
+	}
+}
+//字体颜色
+@primary-color : #4A8DF1;//主题颜色
+.primary-color { color: @primary-color;}
+
+//公共搜索框
+.search-content{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  position:relative;
+  padding-bottom:25px;
+  .input-cells{
+    display: flex;
+  }
+  .ivu-date-picker,.ivu-select,.input-cell {
+    width: 200px;
+    margin-left: 5px;
+  }
+}
+
+//text
+.error-text{
+  color: #ff5e5b;
+}
+.gray-text{
+  color: #3F4A5A;
+}
+.blue-text{
+  color: #4A8DF1;
+}
+
+//loading
+.common-loading{
+  animation: ani-call-spin 1s linear infinite;
+  -webkit-animation: ani-call-spin 1s linear infinite;
+  -moz-animation: ani-call-spin 1s linear infinite;
+  -o-animation: ani-call-spin 1s linear infinite;
+  -ms-animation: ani-call-spin 1s linear infinite;
+}
+@keyframes ani-call-spin {
+  0% { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  100%   { transform: rotate(360deg);}
+}
+@-webkit-keyframes ani-call-spin {
+  0% { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  100%   { transform: rotate(360deg);}
+}
+@-moz-keyframes ani-call-spin {
+  0% { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  100%   { transform: rotate(360deg);}
+}
+@-o-keyframes ani-call-spin {
+  0% { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  100%   { transform: rotate(360deg);}
+}
+@-ms-keyframes ani-call-spin {
+  0% { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  100%   { transform: rotate(360deg);}
+}

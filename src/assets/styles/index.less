@@ -1,0 +1,443 @@
+@import '~iview/src/styles/index.less';
+
+// Here are the variables to cover, such as:
+@primary-color          : #4A8DF1;//主题颜色
+@info-color             : #2db7f5;//信息提示
+@success-color          : #19be6b;//成功状态
+@warning-color          : #ff9900;//警告提示
+@error-color            : #ff5e5b;//失败提示
+
+@title-color            : #293547;//标题色
+@text-color             : #3F4A5A;//正文
+
+// Border color
+@border-color-base      : #dddee1;  // outside//border的disabled的颜色
+@border-color-split     : #e3e8ee;  // inside
+@btn-bg-hover: #87b3fa;
+@btn-upload-hover: #ecf5ff;
+
+//btn
+.ivu-btn {padding:5px 15px;}
+.ivu-btn > span{vertical-align: top}
+
+.ivu-btn-primary:focus {box-shadow:none;}
+.ivu-btn-primary:hover {background-color: @btn-bg-hover;border-color:@btn-bg-hover;}
+.ivu-btn-primary.active, .ivu-btn-primary:active {background-color:@primary-color;border-color:@primary-color;}
+
+.ynt-btn-upload.hover,.ynt-btn-upload:active {background-color: @btn-upload-hover;}
+//upload上传
+.ivu-upload-list-remove{
+	font-size: 26px;
+	margin-right: 20px;
+	line-height: 32px;
+}
+//input
+.ivu-input{
+	height:34px;
+	line-height: 34px;
+}
+.ivu-input:focus {box-shadow:none;}
+// .ivu-input-wrapper{width: 260px;
+//   .ivu-input-with-suffix{height:34px;line-height: 34px;width: 260px;}
+// }
+.ivu-input-wrapper{
+  .ivu-input-with-suffix{height:34px;line-height: 34px;}
+}
+.ivu-cascader-size-default{width: 260px}
+.ivu-date-picker{width: 260px }
+//radio
+.ivu-radio {margin-right: 10px;}
+.ivu-radio-wrapper {margin-right: 18px;}
+//checkbox
+.ivu-checkbox-inner {margin-right: 8px;}
+.ivu-checkbox-wrapper {margin-right: 18px;}
+//switch
+.ivu-switch-large {
+    width: 60px;
+    height: 24px;
+    line-height: 22px;
+    border-radius: 24px;
+    &::after {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+}
+.ivu-switch-small {
+    height: 14px;
+    line-height: 12px;
+    &::after {
+        width: 10px;
+        height: 10px;
+    }
+}
+//menu-left-icon
+.ynt-menu-icon { width: 16px;height: 16px;}
+//select
+// .ivu-select-default {width:160px; }
+.ivu-select-single,.ivu-select-multiple{
+  .ivu-select-selection{
+    height:34px;
+    .ivu-select-placeholder,.ivu-select-selected-value{
+      line-height:32px;
+	}
+}
+}
+//用于select下拉列表dropdown的宽度要是100%
+.ivu-select {
+	.ivu-select-dropdown {
+		width: inherit;
+	}
+}
+
+//input
+//tabs
+.ivu-tabs-nav {
+    .ivu-tabs-tab {
+        color: #293547;
+        font-weight: 600;
+    }
+}
+//form 串起来
+.ynt-form {
+    &.ivu-form {
+        padding: 40px 0 40px;
+    }
+}
+//modal
+.footer-btn() {
+    width: 80px;
+    height: 32px;
+    line-height: 30px;
+    padding: 0px;
+    text-align: center;
+    border-radius: 4px;
+}
+.vertical-center-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ivu-modal{
+        top: 0;
+    }
+}
+.ivu-modal-content {
+    border-radius: 2px;
+    .ivu-modal-header {
+        padding: 14px 20px;
+    }
+    .ivu-modal-body {
+		padding:0px;
+		line-height: normal;
+		max-height: 500px;
+		overflow: auto;
+    }
+    .ivu-modal-footer{
+        height: 60px;
+        padding: 0px;
+        text-align: right;
+        line-height: 60px;
+		padding-right: 18px;
+
+        .ynt-modal-cancel {
+            .footer-btn;
+            color: #293547;
+        }
+        .ynt-modal-sure {
+            .footer-btn;
+            color: #fff;
+        }
+    }
+}
+//step
+.ivu-steps .ivu-steps-head-inner {margin-right: 10px;}
+//breadcrumb
+.ivu-breadcrumb a {color: #a9aeb5;}
+.ivu-breadcrumb-item-separator {color: #d9d9d9;}
+.ivu-breadcrumb>span:last-child {color: #293547;font-weight: 600;}
+//table
+.ivu-table {font-size: 14px;}
+.ivu-table th {background: #f5f5f6;height: 42px;border-bottom-color: @border-color-base;}
+th .ivu-table-cell{display: inline-block;}
+th .ivu-table-cell-with-selection{display: inline;}
+tr.ivu-table-row-hover {
+	td{
+		background: #F5F5F6 !important;
+		&:first-child{
+			position: relative;
+			&:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content:"";
+				width: 4px;
+				height: 42px;
+				background: @primary-color;
+			}
+		}
+	}
+}
+.ivu-table td {height: 42px;border-bottom-color: #f0f0f0;}
+.ivu-tooltip-rel {
+    vertical-align: bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// display: inline-block;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     vertical-align: bottom;
+//     width: 100%;
+//page
+.ivu-page{
+	text-align: right;
+}
+.ivu-page-options-sizer{
+	position: relative;
+  .ivu-select-default{
+    width: 100px;
+  }
+}
+.ivu-page-item-active{background: @primary-color;
+  a{color:#fff;
+    &:hover{color:#fff;}
+  }
+}
+.ivu-page-item{
+  &:hover{background: @primary-color;
+    a{color:#fff;}
+  }
+}
+//radio为button得时候点击切换样式有问题重置
+.ivu-radio-group-button .ivu-radio-wrapper:before, .ivu-radio-group-button .ivu-radio-wrapper:after{display: none}
+
+.clear { &:after {clear: both;}}
+//confirm弹框样式
+.ivu-modal-confirm{
+	padding: 11px 14px;
+	.ivu-modal-confirm-head-title{
+		margin-left: 15px;
+		font-size:14px;
+		color:rgba(41, 53, 71, 1);
+	}
+	.ivu-modal-confirm-head-icon-confirm{
+		color:#FFBF00;
+	}
+	.ivu-modal-confirm-body{
+		line-height: 26px;
+		padding: 10px 30px 15px 38px;
+		&.ivu-modal-confirm-body-render {
+			height: 200px;
+			overflow: auto;
+		}
+	}
+	.ivu-btn-text{
+		border: none;
+		margin-right: -17px;
+	}
+	.ivu-modal-confirm-footer{
+		margin-top: 5px;
+		button + button{margin-left:20px;}
+	}
+}
+
+.ivu-tooltip,.ivu-tooltip-popper{
+	.ivu-icon{
+		vertical-align: middle;
+	}
+	.ivu-tooltip-inner {
+		white-space: normal;
+		word-break: break-all;
+		max-width: 600px;
+	}
+}
+//公共dialog
+.common-dialog{
+	.ivu-modal-content{
+		.ivu-modal-header{
+			padding: 9px 16px;
+		}
+		.ivu-modal-body {
+			padding: 30px 35px 0 35px;
+		}
+		.ivu-modal-close{
+			top:4px;
+		}
+	}
+}
+
+
+//公共搜索框
+.search-container{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	position:relative;
+	padding-bottom:25px;
+	// &:after{
+	// 	content: '';
+	// 	position: absolute;
+	// 	bottom:0;
+	// 	left:-35px;
+	// 	right: -35px;
+	// 	height: 1px;
+	// 	background-color: #f1f1f1;
+	// }
+	.input-cells{
+		display: flex;
+		&>.ivu-select:not(:first-child){
+			margin-left: 5px;
+		}
+	}
+	.ivu-date-picker {
+		margin-left: 5px;
+		margin-right: 0;
+	}
+}
+//tab下面得线
+.ivu-tabs-nav-container{overflow: visible;}
+.ivu-tabs-ink-bar{height:0;background-color: transparent}
+.ivu-tabs-nav .ivu-tabs-tab{padding:8px 0px;margin:0 25px;}
+.ivu-tabs-nav .ivu-tabs-tab:nth-child(2){margin-left: 0px}
+.ivu-tabs-nav .ivu-tabs-tab-active{border-bottom: 2px solid #4a8df1;}
+//统一tooltip背景色
+//下
+.ivu-tooltip-popper[x-placement^="bottom"] .ivu-tooltip-arrow {
+    top: 3px;
+    border-width: 0 7px 7px;
+    border-bottom-color: rgba(217, 217, 217, 0.5);
+}
+.ivu-tooltip-popper[x-placement^="bottom"] {
+    padding: 10px 0 7px 0;
+}
+.ivu-tooltip-popper[x-placement^="bottom"]{
+	.ivu-tooltip-arrow {
+		&::after{
+			content: " ";
+			top: 1px;
+			margin-left: -7px;
+			border-top-width: 0;
+			border-bottom-width: 7px;
+			border-bottom-color: #fff;
+		}
+	}
+}
+//上
+.ivu-tooltip-popper[x-placement^="top"] .ivu-tooltip-arrow {
+    bottom: 3px;
+    border-width: 7px 7px 0;
+	border-top-color: hsla(0,0%,85%,.5);
+}
+.ivu-tooltip-popper[x-placement^=top]{
+	.ivu-tooltip-arrow{
+		&::after {
+			content: " ";
+			bottom: 1px;
+			margin-left: -7px;
+			border-bottom-width: 0;
+			border-top-width: 7px;
+			border-top-color: #fff;
+		}
+	}
+}
+//左
+.ivu-tooltip-popper[x-placement^="left"] .ivu-tooltip-arrow {
+	right: 2px;
+	border-width: 7px 0 7px 7px;
+	border-left-color: hsla(0,0%,85%,.5);
+}
+.ivu-tooltip-popper[x-placement^="left"]{
+	.ivu-tooltip-arrow{
+		&::after {
+			content: " ";
+			right: 1px;
+			border-right-width: 0;
+			border-left-width: 7px;
+			border-left-color: #fff;
+			bottom: -7px;
+		}
+	}
+}
+//右
+.ivu-tooltip-popper[x-placement^="right"] .ivu-tooltip-arrow {
+	left: 3px;
+    border-width: 7px 7px 7px 0;
+    border-right-color: hsla(0,0%,85%,.5);
+}
+.ivu-tooltip-popper[x-placement^="right"]{
+	.ivu-tooltip-arrow{
+		&::after {
+			content: " ";
+			left: 1px;
+			bottom: -7px;
+			border-left-width: 0;
+			border-right-width: 7px;
+			border-right-color: #fff;
+		}
+	}
+}
+
+
+
+.ivu-tooltip-arrow, .ivu-tooltip-arrow:after {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+}
+.ivu-tooltip-arrow{
+	&::after{
+		content: "";
+		border-width: 7px;
+	}
+}
+// .ivu-tooltip-popper[x-placement^="bottom"] .ivu-tooltip-arrow{
+// 	border-width: 0 7px 7px;
+//     border-bottom-color: rgba(217, 217, 217, 0.5);
+// }
+// .ivu-tooltip-popper[x-placement^="right"] .ivu-tooltip-arrow{
+// 	border-right-color: rgba(217, 217, 217, 0.5);
+// }
+// .ivu-tooltip-popper[x-placement^="top"] .ivu-tooltip-arrow{
+// 	border-right-color: rgba(217, 217, 217, 0.5);
+// }
+// .ivu-tooltip-popper[x-placement^="left"] .ivu-tooltip-arrow{
+// 	border-right-color: rgba(217, 217, 217, 0.5);
+// }
+
+.ivu-tooltip-inner{
+	background-color: #fff;
+	color: #3F4A5A;
+}
+
+//重置page上面的item是数值
+.ivu-page-item,.ivu-page-item-jump-prev,.ivu-page-item-jump-next {display: none;}
+//重置inputNumber的placeholder和其他的input的颜色不一致的问题
+.ivu-input-number-input::-webkit-input-placeholder {/* Chrome/Opera/Safari */
+	color: #ccc;
+}
+.ivu-input-number-input::-moz-placeholder {/* Firefox 19+ */
+	color: #ccc;
+}
+.ivu-input-number-input::-ms-input-placeholder {/* IE 10+ */
+	color: #ccc;
+}
+.ivu-input-number-input::-moz-placeholder {/* Firefox 18- */
+	color: #ccc;
+}
+.ivu-modal-confirm-head-title {
+	width: 300px;
+	font-size: 16px!important;
+	margin-left: 10px!important;
+	vertical-align: text-top;
+}
+.ivu-modal-confirm-body {
+	color: #57626D;
+}
