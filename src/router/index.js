@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import store from '@/vuex/store'
 import routes from './routes'
 import { addHandler } from "../utils/add-handler";
+import { Message } from "iview";
 
 // 断网检测
 var NetWorkStatus = window.navigator.onLine;
@@ -44,7 +45,7 @@ router.beforeEach((to, from, next) => {
             }
         }
     } else {
-        Vue.prototype.$Message.error('网络异常，请检查网络连接是否成功！');
+        Message.error('网络异常，请检查网络连接是否成功！');
     }
 });
 

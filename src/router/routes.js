@@ -17,9 +17,6 @@ const Demo5 = () =>
 const Login = () =>
     import ( /* webpackChunkName: "group-login" */ '@/views/login/login');
 
-const Auth = () =>
-    import ( /* webpackChunkName: "group-Auth" */ '@/views/login/auth');
-
 const routes = [
     {
         path: '/home',

@@ -103,10 +103,20 @@
         components: {},
         methods: {
             handleSubmit(name) {
-                if(!this.$route.query.redirect || this.$route.query.redirect.indexOf('login')){
+                // 下面一行是占位，防止eslint报错
+                name;md5;getPublicKey;doLogin;getUserInfo;
+                /**项目中删掉下面高亮，放开注释 */
+                this.$store.dispatch('userInfo', {
+                    customerCode: "chxlvwh",
+                    id: 2,
+                    phone: "",
+                    realName: "chx",
+                    username: this.loginData.username
+                });
+                if(!this.$route.query.redirect){
                     this.$router.push('/home');
-                }else{
-                    this.$router.push({ path: this.$route.query.redirect});
+                } else {
+                    this.$router.push({ path: this.$route.query.redirect });
                 }
                 /** 实际项目中放开
                 this.$refs[name].validate((valid) => {
@@ -181,7 +191,6 @@
                             this.codeUrl = base.base + '/login/getVeriCodeImg?userName=' + _data.userName +'&random='+Math.random();
                             this.codeActive = true;
                         })
-                    }else{
                     }
                 })
             },
@@ -206,13 +215,13 @@
                         verifyCodeImg({
                             userName: this.loginData.username,
                             code: this.loginData.code
-                        }).then(res=> {
+                        }).then(()=> {
                             this.codeStatus = '1';
                             setTimeout(() => {
                                 this.identifyFlag = false;
                                 this.codeStatus = '0';
                             }, 500);
-                        }).catch(err=> {
+                        }).catch(()=> {
                             this.codeStatus = '2';
                             setTimeout(() => {
                                 this.codeRefresh();

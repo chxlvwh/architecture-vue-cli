@@ -14,20 +14,17 @@
 </template>
 
 <script>
-    import site from '@@/js/config'
     export default {
         name: "titleComponent",
         data() {
             return {
-                userName: '807051073@qq.com',
                 folderShow:false,
             }
         },
         computed: {
-            
-        },
-        watch: {
-            
+            userName() {
+                return this.$store.getters.userName
+            },
         },
         methods: {
             handleLoginOut(){

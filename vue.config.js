@@ -22,7 +22,7 @@ module.exports = {
     productionSourceMap: false,
 
     //关闭eslint规范
-    lintOnSave: false,
+    lintOnSave: true,
     chainWebpack: config => {
         config.externals(externals);
         config.resolve.extensions.merge(['.js', '.vue', '.json', '.less']);

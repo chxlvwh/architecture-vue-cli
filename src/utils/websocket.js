@@ -1,5 +1,6 @@
 import store from '@/vuex/store'
 let websock = null;
+// eslint-disable-next-line
 let globalCallback = null;
 // 本地环境
 const localArray = ['10', '127', 'localhost'];
@@ -29,7 +30,7 @@ function initWebSocket() {
     if ('WebSocket' in window) {
             
         if (!websock || websock && websock.readyState !== websock.OPEN) {
-            websock = new WebSocket(protocol + host + '/ivr-cms/webSocket/' + JSON.parse(sessionStorage.getItem('userInfo')).customerCode);
+            websock = new WebSocket(protocol + host + '/api/' + JSON.parse(sessionStorage.getItem('userInfo')).customerCode);
         }
     } else {
         alert('当前浏览器不支持websocket')
@@ -37,18 +38,20 @@ function initWebSocket() {
     websock.onmessage = function (e) {
         websocketonmessage(e)
     }
-    websock.onclose = function (e) {
+    websock.onclose = function () {
+        // eslint-disable-next-line
         console.log("断开了");
-        console.log(!(location.hash.match(/login|apply|auth|forget/g)) && JSON.parse(sessionStorage.getItem('userToken')));
         if (!(location.hash.match(/login|apply|auth|forget/g)) && JSON.parse(sessionStorage.getItem('userToken'))) {
             initWebSocket();
         }
     }
     websock.onopen = function () {
+        // eslint-disable-next-line
         console.log('连接成功');
     }
     // 连接发生错误的回调方法
-    websock.onerror = function (err) {
+    websock.onerror = function () {
+        // eslint-disable-next-line
         console.log('WebSocket连接发生错误')
     }
 }
