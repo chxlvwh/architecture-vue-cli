@@ -45,19 +45,10 @@ module.exports = {
         // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#configuring-proxy
         proxy: {
             '/api/': {
-                // target: 'http://10.1.20.68:8077/ivr-cms/',
                 target: 'http://192.168.88.126/ivr-cms/',
-                // target: 'https://express-ivr.ynt.ai/ivr-cms/',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''
-                }
-            },
-            '/common': {
-                target: 'http://10.99.1.133:12222',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/common': ''
                 }
             }
         }, // string | Object

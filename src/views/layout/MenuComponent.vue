@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <Sider hide-trigger collapsible :collapsed-width="60" v-model="isCollapsed">
-            <div class="home-logo"><span>IVR后台管理</span></div>
+            <div class="home-logo"><span>项目名称</span></div>
             <Menu
                 :active-name="activeName"
                 :open-names="opennames"
@@ -148,77 +148,69 @@
                     children: [],
                     icon: "ios-home",
                     id: 1,
-                    name: "home/homepage",
+                    name: "home/demo",
                     parentId: 0,
-                    path: "homepage",
-                    perms: "mon",
-                    title: "demo-首页",
+                    path: "demo",
+                    title: "demo",
                     type: 0,
                 },
                 {
                     children: [],
-                    icon: "ios-call",
+                    icon: "ios-home",
                     id: 2,
-                    name: "home/recordlog",
+                    name: "home/demo1",
                     parentId: 0,
-                    path: "home/recordlog",
-                    perms: "mon",
+                    path: "home/demo1",
                     title: "demo1",
                     type: 0,
                 },
                 {
                     children: [],
-                    icon: "md-chatboxes",
+                    icon: "ios-home",
                     id: 2,
-                    name: "home/dialogueManage",
+                    name: "home/demo2",
                     parentId: 0,
-                    path: "home/dialogueManage",
-                    perms: "dialogueManage",
+                    path: "home/demo2",
                     title: "demo2",
                     type: 1,
                 },
                 {
                     children: [],
-                    icon: "ios-options",
+                    icon: "ios-home",
                     id: 2,
-                    name: "home/sipManage",
+                    name: "home/demo3",
                     parentId: 0,
-                    path: "home/sipManage",
-                    perms: "sipManage",
+                    path: "home/demo3",
                     title: "demo3",
                     type: 1,
                 },
                 {
                     children: [],
-                    icon: "md-mail",
+                    icon: "ios-home",
                     id: 3,
-                    name: "home/smsManage",
+                    name: "home/demo4",
                     parentId: 0,
-                    path: "home/smsManage",
-                    perms: "smsManage",
+                    path: "home/demo4",
                     title: "demo4",
                     type: 1,
                 },
                 {
-                    icon: "md-settings",
+                    icon: "ios-home",
                     id: 12,
-                    name: "system",
-                    parentId: 12,
-                    path: "system",
-                    perms: "setting",
+                    name: "home/demo5",
+                    parentId: 0,
+                    path: "home/demo5",
                     title: "demo5",
                     type: 0,
                     children: [
                         {
                             children: [],
-                            icon: '',
                             id: 15,
                             parentId: 12,
-                            path: 'person',
-                            name: 'home/person',
+                            path: 'demo5-1',
+                            name: 'home/demo5-1',
                             title: 'demo5-1',
                             type: 0,
-                            perms: 'person'
                         },
                     ]
                 }
@@ -226,7 +218,7 @@
             ]
             
             this.activeName = this.$route.name;
-            this.opennames =  sessionStorage.getItem('opennames') ? JSON.parse(sessionStorage.getItem('opennames')) : ['system'];
+            this.opennames =  sessionStorage.getItem('opennames') ? JSON.parse(sessionStorage.getItem('opennames')) : ['demo5'];
             
             this.setMenuList(menu);
         }

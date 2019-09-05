@@ -1,12 +1,12 @@
 <template>
     <div class="login-container" @keyup.enter="handleSubmit('formValidate')">
-        <a href="http://www.ynt.ai/" target="_blank">
-            <img src="../../assets/images/logo-fixed1.png" alt="">
+        <a href="https://cn.vuejs.org/" target="_blank">
+            <img src="../../assets/images/logo.png" alt="">
         </a>
         <div class="login-main">
-            <img src="../../assets/images/bg_login.png" alt="">
+            <img src="http://placeimg.com/450/450" alt="">
             <div class="login-inputs">
-                <h5>小意智能语音IVR</h5>
+                <h5>项目名称</h5>
                 <Form ref="formValidate" class="loginForm" :model="loginData" :rules="ruleValidate" :label-width="0">
                     <FormItem prop="username">
                         <Input
@@ -14,7 +14,7 @@
                         prefix="md-person"
                         v-model="loginData.username"
                         :maxlength="50"
-                        placeholder="请输入邮箱账号" />
+                        placeholder="用户名" />
                     </FormItem>
                     <FormItem prop="password">
                         <Input
@@ -22,7 +22,7 @@
                             v-model="loginData.password"
                             type="password"
                             :maxlength="16"
-                            placeholder="请输入6到16位字符密码" />
+                            placeholder="密码" />
                     </FormItem>
                     <FormItem class='ident-wrap' v-if="identifyFlag"
                             v-click-outside.capture="onClickOutside"
@@ -66,8 +66,7 @@
 </template>
 
 <script>
-    import {directive as clickOutside} from 'v-click-outside-x';
-    import site from '@@/js/config'
+    import { directive as clickOutside } from 'v-click-outside-x';
     import { getPublicKey, doLogin, verifyCodeImg } from "../../api/auth-api";
     import { getUserInfo } from "../../api/user-api";
     import { JSEncrypt } from "jsencrypt";
@@ -104,10 +103,12 @@
         components: {},
         methods: {
             handleSubmit(name) {
-                // if (this.loginData.code.length < 3) {
-                //     this.$Message.warning('请选择验证码')
-                //     return;
-                // }
+                if(!this.$route.query.redirect || this.$route.query.redirect.indexOf('login')){
+                    this.$router.push('/home');
+                }else{
+                    this.$router.push({ path: this.$route.query.redirect});
+                }
+                /** 实际项目中放开
                 this.$refs[name].validate((valid) => {
                     if (valid) {
                         let _data = {};
@@ -152,6 +153,7 @@
                         })
                     }
                 })
+                */
             },
             encryptStr(password){
                 let encrypt = new JSEncrypt();

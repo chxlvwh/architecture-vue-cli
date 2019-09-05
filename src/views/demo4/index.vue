@@ -1,36 +1,27 @@
 <template lang="html">
     <div class="homepage">
         <div class="home-header">
-            <h1>欢迎，现在时间是{{now}}</h1>
+            
         </div>
     </div>
 </template>
 
 <script>
 import date from "date-and-time";
-import { clearInterval } from 'timers';
 
 export default {
-    data() {
-        return {
-            timer: null,
-            nowDate: new Date()
-        }
-    },
     computed: {
         now() {
-            return date.format(this.nowDate, 'YYYY-MM-DD HH:mm:ss')
+            return date.format(new Date(), 'YYYY-MM-DD HH:mm:ss')
+        }
+    },
+    data() {
+        return {
         }
     },
     methods: {
     },
     created() {
-        this.timer = setInterval(() => {
-            this.nowDate = new Date()
-        }, 1000);
-    },
-    beforeDestroy() {
-        window.clearInterval(this.timer)
     }
 }
 </script>
@@ -41,7 +32,6 @@ export default {
     padding: 0!important;
     .home-header {
         margin-bottom: 20px;
-        text-align: center;
         >span {
             font-size: 13px;
             line-height:1;
